@@ -60,6 +60,7 @@ const MainSection = styled.div`
 `
 
 const SideWrapper = styled.div`
+  z-index: 999;
   width: 300px;
   @media screen and (max-width: 990px){
     display: ${({ isOpen }) => (isOpen ? 'fixed' : 'none')};;
