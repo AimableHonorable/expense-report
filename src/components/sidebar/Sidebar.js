@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Sidebar = () => {
+const Sidebar = ({toggleSidebar}) => {
   return (
     
       <SidebarWrapper>
         <SidebarMenu>
-          <SidebarLink to="/">Dashboard</SidebarLink>
-          <SidebarLink to="/">Income</SidebarLink>
-          <SidebarLink to="/">Expenses</SidebarLink>
-          <SidebarLink to="/">Reports</SidebarLink>
+          <SidebarLink to="/" onClick={toggleSidebar}>Dashboard</SidebarLink>
+          <SidebarLink to="/income" onClick={toggleSidebar}>Income</SidebarLink>
+          <SidebarLink to="/expenses" onClick={toggleSidebar}>Expenses</SidebarLink>
+          <SidebarLink to="/reports" onClick={toggleSidebar}>Reports</SidebarLink>
         </SidebarMenu>
       </SidebarWrapper>
     
@@ -19,7 +19,7 @@ const Sidebar = () => {
 export default Sidebar
 
 const SidebarWrapper = styled.div`
-  background-color: var(--third-color);
+  background-color: var(--fourth-color);
   height: 100vh;
 `
 

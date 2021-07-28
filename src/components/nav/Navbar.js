@@ -1,11 +1,21 @@
 import styled from 'styled-components';
 import { FaUserCircle } from 'react-icons/fa'
+import { GoThreeBars } from 'react-icons/go'
+import { RiCloseLine } from 'react-icons/ri'
 
-const Navbar = () => {
+const Navbar = ({toggleSidebar, isOpen}) => {
   return (
     <Nav>
       <NavLogo>DASHBOARD</NavLogo>
-      <UserIcon><FaUserCircle/></UserIcon>
+      <Icon>
+        <UserIcon>
+          <FaUserCircle/>
+        </UserIcon>
+        
+        <NavToggle onClick={toggleSidebar}>
+          {isOpen ? <RiCloseLine/> : <GoThreeBars/> }
+          </NavToggle>
+        </Icon>
     </Nav>
   )
 }
@@ -29,7 +39,23 @@ const NavLogo = styled.div`
   align-items: center;
 
 `
-const UserIcon = styled.div`
+const Icon = styled.div`
   display: flex;
   align-items: center;
+`
+const UserIcon = styled.i`
+  font-size: 20px;
+  margin-bottom: 5px;
+  @media screen and (max-width: 990px){
+    display: none;
+  }
+`
+const NavToggle = styled.i`
+  margin-bottom: 5px;
+  font-size: 20px;
+  display: none;
+
+  @media screen and (max-width: 990px){
+    display: inline;
+  }
 `
